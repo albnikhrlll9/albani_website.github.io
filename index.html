@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <style>
         /* === GLOBAL STYLES === */
         :root {
@@ -17,6 +16,8 @@
             --dark: #1b5e20;
             --light: #f5f5f5;
             --accent: #ffc107;
+            --text: #333333;
+            --text-light: #555555;
         }
         
         * {
@@ -28,11 +29,12 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 100px;
         }
         
         body {
             background-color: #f9f9f9;
-            color: #333;
+            color: var(--text);
             line-height: 1.7;
         }
         
@@ -40,6 +42,16 @@
         h1, h2, h3, h4 {
             font-weight: 600;
             color: var(--dark);
+        }
+        
+        p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        
+        ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
         }
         
         /* === HEADER === */
@@ -65,6 +77,7 @@
         .logo {
             display: flex;
             align-items: center;
+            flex-shrink: 0;
         }
         
         .logo img {
@@ -95,6 +108,7 @@
             list-style: none;
             display: flex;
             gap: 0.5rem;
+            padding-left: 0;
         }
         
         nav ul li a {
@@ -119,6 +133,7 @@
             color: white;
             font-size: 1.5rem;
             cursor: pointer;
+            padding: 0.5rem;
         }
         
         /* === MAIN CONTENT === */
@@ -217,6 +232,7 @@
             font-size: 1.2rem;
             margin-bottom: 2rem;
             opacity: 0.9;
+            color: white;
         }
         
         .btn {
@@ -234,6 +250,7 @@
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            background-color: #ffca28;
         }
         
         /* === BERITA SECTION === */
@@ -251,6 +268,7 @@
             background: white;
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
         
         .berita-card:hover {
@@ -331,12 +349,15 @@
         /* === TABLE STYLES === */
         .table-responsive {
             overflow-x: auto;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 1.5rem 0;
+            margin: 0;
             min-width: 600px;
         }
         
@@ -378,6 +399,11 @@
             position: relative;
             cursor: pointer;
             aspect-ratio: 4/3;
+            transition: transform 0.3s ease;
+        }
+        
+        .galeri-item:hover {
+            transform: translateY(-5px);
         }
         
         .galeri-item img {
@@ -421,6 +447,8 @@
             padding: 2.5rem;
             border-radius: 10px;
             color: white;
+            position: sticky;
+            top: 120px;
         }
         
         .contact-info h3 {
@@ -470,6 +498,7 @@
         
         .contact-text a:hover {
             color: var(--accent);
+            text-decoration: underline;
         }
         
         .opening-hours {
@@ -485,6 +514,7 @@
         
         .opening-hours ul {
             list-style: none;
+            padding-left: 0;
         }
         
         .opening-hours li {
@@ -552,7 +582,6 @@
             background: linear-gradient(to right, var(--dark), var(--primary));
         }
         
-        /* === MAP STYLES === */
         .map-container {
             margin-top: 3rem;
             border-radius: 12px;
@@ -606,17 +635,19 @@
             margin-bottom: 1rem;
             opacity: 0.8;
             font-size: 0.95rem;
+            color: rgba(255,255,255,0.8);
         }
         
         .footer-links {
             list-style: none;
+            padding-left: 0;
         }
         
         .footer-links li {
             margin-bottom: 0.8rem;
         }
         
-        .footer-links a {
+        .footer-links a, .footer-links p {
             color: rgba(255,255,255,0.8);
             text-decoration: none;
             transition: all 0.3s ease;
@@ -629,9 +660,9 @@
             transform: translateX(5px);
         }
         
-        .footer-links a i {
-            margin-right: 0.5rem;
-            font-size: 0.8rem;
+        .footer-links a i, .footer-links p i {
+            margin-right: 0.8rem;
+            font-size: 1rem;
         }
         
         .social-links {
@@ -668,85 +699,112 @@
             opacity: 0.7;
         }
         
-        /* === RESPONSIVE === */
-        @media (max-width: 992px) {
-            .form-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero-content h2 {
-                font-size: 2.5rem;
-            }
-
-            .header-container {
-                flex-wrap: wrap;
-            }
-
-            nav {
-                width: 100%;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.5s ease-in-out;
-            }
-
-            nav.active {
-                max-height: 300px; /* Adjust as needed */
-                padding-top: 1rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 0.3rem;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
+        /* === UTILITY CLASSES === */
+        .text-center {
+            text-align: center;
         }
         
-        @media (max-width: 768px) {
-            .header-container {
+        .mb-1 { margin-bottom: 1rem; }
+        .mb-2 { margin-bottom: 2rem; }
+        .mb-3 { margin-bottom: 3rem; }
+        
+        /* === RESPONSIVE === */
+        @media (max-width: 992px) {
+            .form-container { 
+                grid-template-columns: 1fr; 
+                gap: 2rem;
+            }
+            .contact-info {
+                position: static;
+                order: 2;
+            }
+            .hero-content h2 { font-size: 2.5rem; }
+            .header-container { 
+                flex-wrap: wrap; 
                 padding: 0 1.5rem;
             }
-            
+            nav { 
+                width: 100%; 
+                max-height: 0; 
+                overflow: hidden; 
+                transition: max-height 0.5s ease-in-out;
+                background: var(--primary);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                border-radius: 0 0 10px 10px;
+                padding: 0 1.5rem;
+            }
+            nav.active { 
+                max-height: 500px; 
+                padding: 1rem 1.5rem 2rem; 
+            }
+            nav ul { 
+                flex-direction: column; 
+                align-items: center; 
+                gap: 0.5rem; 
+            }
             nav ul li {
                 width: 100%;
                 text-align: center;
             }
-            
             nav ul li a {
-                padding: 0.7rem;
-                border-radius: 5px;
+                padding: 0.8rem;
+                border-radius: 8px;
             }
-            
-            .hero {
-                height: 400px;
+            .menu-toggle { 
+                display: block; 
             }
-            
-            .hero-content h2 {
-                font-size: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .logo img { width: 50px; height: 50px; }
+            .logo-text h1 { font-size: 1.4rem; }
+            .logo-text p { font-size: 0.7rem; }
+            .hero { height: 400px; }
+            .hero-content h2 { 
+                font-size: 2rem; 
+                line-height: 1.3; 
             }
-            
-            .hero-content p {
-                font-size: 1rem;
+            .hero-content p { font-size: 1.1rem; }
+            main { 
+                padding: 0 1.5rem; 
+                margin-top: 1.5rem; 
             }
-            
-            main {
-                padding: 0 1.5rem;
+            section { 
+                padding: 1.5rem; 
+                margin-bottom: 2rem;
             }
-            
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.5rem; }
+            .berita-list { grid-template-columns: 1fr; }
+            .footer-container { 
+                grid-template-columns: 1fr; 
+                gap: 2rem; 
+            }
+            .map-container {
+                height: 350px;
+            }
+        }
+
+        /* PENYEMPURNAAN FINAL untuk layar sangat kecil */
+        @media (max-width: 480px) {
+            .header-container { padding: 0 1rem; }
+            .logo img { 
+                width: 45px; 
+                height: 45px; 
+                margin-right: 10px; 
+            }
+            .logo-text h1 { font-size: 1.2rem; }
+            .logo-text p { display: none; }
+            .hero-content h2 { font-size: 1.8rem; }
+            .hero-content p { font-size: 1rem; }
+            .contact-info { padding: 1.5rem; }
             section {
-                padding: 1.5rem;
+                padding: 1.5rem 1rem;
             }
-            
-            .berita-list {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            .form-container {
+                gap: 1.5rem;
             }
         }
         
@@ -755,12 +813,17 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
-        section {
-            animation: fadeIn 0.6s ease-out forwards;
+
+        .scroll-animate {
             opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        
+
+        .scroll-animate.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -789,7 +852,7 @@
     </header>
 
     <main>
-        <section id="beranda">
+        <section id="beranda" class="scroll-animate">
             <div class="hero">
                 <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1932&auto=format&fit=crop" alt="Pemandangan Desa Palasah">
                 <div class="hero-content">
@@ -800,7 +863,7 @@
             </div>
         </section>
 
-        <section id="profil">
+        <section id="profil" class="scroll-animate">
             <h1>Profil Desa Palasah</h1>
             
             <h2>Sejarah Desa</h2>
@@ -815,12 +878,12 @@
                     </tr>
                     <tr>
                         <th>Luas Wilayah</th>
-                        <td> ( 186,0740 hektar)</td>
+                        <td>186,0740 hektar</td>
                     </tr>
                     <tr>
                         <th>Batas Wilayah</th>
                         <td>
-                            <ul style="padding-left: 20px;">
+                            <ul>
                                 <li><strong>Utara:</strong> Desa Cisambeng</li>
                                 <li><strong>Timur:</strong> Desa Buniwangi</li>
                                 <li><strong>Selatan:</strong> Desa SindangHaji</li>
@@ -856,10 +919,10 @@
             </div>
         </section>
 
-        <section id="pemerintahan">
+        <section id="pemerintahan" class="scroll-animate">
             <h1>Pemerintahan Desa</h1>
             
-            <h2>Struktur  Aparat Desa Palasah</h2>
+            <h2>Struktur Aparat Desa Palasah</h2>
             <div class="table-responsive">
                 <table>
                     <thead>
@@ -883,15 +946,15 @@
                         <tr>
                             <td>Kaur Keuangan</td>
                             <td>Neng Mona N</td>
-                             <td></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Kaur Perancanaan</td>
                             <td>Fahrul Rachmat Nasrullah, S.T</td>
-                             <td></td>
+                            <td></td>
                         </tr>
                         <tr>
-                            <td>Kasi Kesejahteraan </td>
+                            <td>Kasi Kesejahteraan</td>
                             <td>Dendi Darmansyah</td>
                             <td></td>
                         </tr>
@@ -901,20 +964,20 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td>Kasi Pelayanan </td>
-                            <td>Sumarna </td>
+                            <td>Kasi Pelayanan</td>
+                            <td>Sumarna</td>
                             <td></td>
                         </tr>
-                        
                         <tr>
                             <td>Kepala Dusun 1</td>
                             <td>Doni Perdiana</td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td>Kepala Dusun 2 </td>
-                            <td>Unggul Andiana </td>
+                            <td>Kepala Dusun 2</td>
+                            <td>Unggul Andiana</td>
                             <td></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -922,35 +985,20 @@
             <h2>Visi & Misi</h2>
             <div style="background: #f5f5f5; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 5px solid var(--primary);">
                 <h3 style="color: var(--primary);">Visi:</h3>
-                <p style="font-style: italic; font-size: 1.1rem;">"Berdasarkan perkembangan situasi dan kondisi Desa Palasah saat ini, dan terkait deangan Rencana Pembangunan Jangka Menengah Desa (RPJM Desa), maka untuk pembangunan Desa Palasah pada periode 6 (enam) tahun ke depan (tahun 2021-2027), disusun Visi Sebagal berikut :
-"Terwujudnya Desa Palasah Yang Religius, Makmur, Sejahtera, Baik, Bersih dan Adil (REMAJA BISA)" Dengan penjelasan sebagal berikut :
-RELIGIUS
-Mengandung makna bahwa selain dapat memenuhi kebutuhan hidupnya di dunia juga harus dapat memahami dan mengamalkan aturan-aturan agamanya dalam kehidupan sehari-hari sehingga dapat dicapal kehidupan yang bahagia didunia dan diakhirat.
-MAKMUR
-: Mengandung makna Pemerintahan Desa Palasah harus dapat menggali semua sumber daya dan
-potensi
-yang ada untuk kesejahteraan
-masyarakatnya, sehingga akan tercapal sebuah tatanan kehidupan masyarakat Desa Palasah yang
-mandiri tanpa tergantung kepada bantuan dari pihak lain.
-SEJAHTERA
-: Mengandung makna bahwa masyarakat desa
-Palasah harus terpenuhi semua kebutuhan nya dalam segala bidang dari hasil sumber daya yang ada di desa Palasah.
-BAIK, BERSIH DAN : Mengandung makna pemerintahan desa Palasah
-ADIL
-harus bersifat tidak memihak kepada golongan tertentu dalam memberikan pelayanan secara optimal."</p>
+                <p style="font-style: italic; font-size: 1.1rem;">"Terwujudnya Desa Palasah yang Maju, Mandiri, dan Berbudaya Berlandaskan Gotong Royong"</p>
                 
                 <h3 style="color: var(--primary); margin-top: 1.5rem;">Misi:</h3>
-                <ol style="padding-left: 1.5rem;">
-                    <li>.Dapat menciptakan rasa ketenangan, rasa aman kepada masyarakat.</li>
-                    <li>.Dapat memajukan Desa Palasah lebih maju dari sebelumnya dari segala aspek.</li>
-                    <li>.Dapat Menjadikan masyarakat yang taat untuk beribadah.</li>
-                    <li>.Dapat bekerja secara optimal dalam melayani masyarakat.</li>
-                    <li>.Dapat menciptakan penghijauan..</li>
+                <ol>
+                    <li>Meningkatkan pembangunan infrastruktur desa yang merata dan berkelanjutan.</li>
+                    <li>Mengembangkan potensi ekonomi lokal melalui pemberdayaan UMKM dan pertanian.</li>
+                    <li>Memperkuat nilai-nilai budaya dan agama dalam kehidupan masyarakat.</li>
+                    <li>Meningkatkan kualitas sumber daya manusia melalui pendidikan dan pelatihan.</li>
+                    <li>Mengoptimalkan pelayanan publik yang transparan dan akuntabel.</li>
                 </ol>
             </div>
         </section>
 
-        <section id="potensi">
+        <section id="potensi" class="scroll-animate">
             <h1>Potensi Desa</h1>
             
             <h2>Pertanian</h2>
@@ -977,25 +1025,29 @@ harus bersifat tidak memihak kepada golongan tertentu dalam memberikan pelayanan
                         </tr>
                         <tr>
                             <td>Fasilitas Lainya</td>
-                            <td>10 ha</td>                 
-                        </tr>    
-                        <td>Tanah Khas Desa</td>
-                            <td>13 ha</td
+                            <td>10 ha</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Tanah Khas Desa</td>
+                            <td>13 ha</td>
+                            <td>-</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
 
             <h2>UMKM & Industri Rumahan</h2>
             <p>Selain pertanian, warga Desa Palasah juga aktif dalam kegiatan ekonomi kreatif melalui UMKM yang menghasilkan produk-produk berkualitas.</p>
-            <ul style="padding-left: 20px;">
+            <ul>
                 <li><strong>Keripik Singkong:</strong> Produksi keripik dengan aneka rasa yang sudah dipasarkan ke luar daerah.</li>
-                <li><strong>Renginang:</strong> </li>
-                 <li><strong>Gula Merah:</strong> Pembuatan gula merah dari nira kelapa secara tradisional.</li>
+                <li><strong>Renginang:</strong> Makanan ringan tradisional yang menjadi oleh-oleh khas desa.</li>
+                <li><strong>Gula Merah:</strong> Pembuatan gula merah dari nira kelapa secara tradisional.</li>
                 <li><strong>Kerajinan Bambu:</strong> Pembuatan anyaman bambu seperti boboko, hihid, dan perabotan rumah tangga lainnya.</li>
             </ul>
         </section>
 
-        <section id="galeri">
+        <section id="galeri" class="scroll-animate">
             <h1>Galeri Desa</h1>
             <div class="galeri">
                 <div class="galeri-item">
@@ -1014,130 +1066,94 @@ harus bersifat tidak memihak kepada golongan tertentu dalam memberikan pelayanan
                     <img src="UMKM.jpg" alt="Produk UMKM">
                     <div class="galeri-caption">Produk UMKM Lokal</div>
                 </div>
-                 <div class="galeri-item">
+                <div class="galeri-item">
                     <img src="anak anak.jpg" alt="Anak-anak Bermain">
                     <div class="galeri-caption">Keceriaan Anak Desa</div>
                 </div>
-                 <div class="galeri-item">
+                <div class="galeri-item">
                     <img src="senja.jpg" alt="Pemandangan Senja">
                     <div class="galeri-caption">Senja di Palasah</div>
                 </div>
             </div>
         </section>
 
-        <section id="berita">
-             <h1>Berita & Informasi</h1>
-             <div class="berita-list">
-                 <article class="berita-card">
-                     <div class="berita-img">
-                         <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1770&auto=format&fit=crop" alt="Festival Desa">
-                     </div>
-                     <div class="berita-content">
-                         <div class="berita-date">
-                             <i class="far fa-calendar-alt"></i> 10 Juli 2025
-                         </div>
-                         <h3>Festival Desa Palasah 2025 Siap Digelar</h3>
-                         <p>Kegiatan tahunan warga Palasah untuk mempromosikan budaya lokal dengan berbagai lomba dan pertunjukan seni akan segera dilaksanakan.</p>
-                         <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
-                     </div>
-                 </article>
-                 
-                 <article class="berita-card">
-                     <div class="berita-img">
-                         <img src="jalan.jpeg" alt="Pembangunan Jalan">
-                     </div>
-                     <div class="berita-content">
-                         <div class="berita-date">
-                             <i class="far fa-calendar-alt"></i> 28 Juni 2025
-                         </div>
-                         <h3>Pembangunan Jalan Desa Tahap II Selesai</h3>
-                         <p>Pemerintah desa telah menyelesaikan perbaikan infrastruktur jalan sepanjang 2 km untuk meningkatkan akses transportasi warga.</p>
-                         <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
-                     </div>
-                 </article>
-                 
-                 <article class="berita-card">
-                     <div class="berita-img">
-                         <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1769&auto=format&fit=crop" alt="Pelatihan UMKM">
-                     </div>
-                     <div class="berita-content">
-                         <div class="berita-date">
-                             <i class="far fa-calendar-alt"></i> 15 Juni 2025
-                         </div>
-                         <h3>Pelatihan Digital Marketing untuk UMKM Sukses</h3>
-                         <p>Peningkatan keterampilan warga dalam pemasaran online untuk produk-produk lokal Desa Palasah telah berhasil dilaksanakan.</p>
-                         <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
-                     </div>
-                 </article>
-             </div>
+        <section id="berita" class="scroll-animate">
+            <h1>Berita & Informasi</h1>
+            <div class="berita-list">
+                <article class="berita-card">
+                    <div class="berita-img">
+                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1770&auto=format&fit=crop" alt="Festival Desa">
+                    </div>
+                    <div class="berita-content">
+                        <div class="berita-date">
+                            <i class="far fa-calendar-alt"></i> 10 Juli 2025
+                        </div>
+                        <h3>Festival Desa Palasah 2025 Siap Digelar</h3>
+                        <p>Kegiatan tahunan warga Palasah untuk mempromosikan budaya lokal dengan berbagai lomba dan pertunjukan seni akan segera dilaksanakan.</p>
+                        <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="berita-card">
+                    <div class="berita-img">
+                        <img src="jalan.jpeg" alt="Pembangunan Jalan">
+                    </div>
+                    <div class="berita-content">
+                        <div class="berita-date">
+                            <i class="far fa-calendar-alt"></i> 28 Juni 2025
+                        </div>
+                        <h3>Pembangunan Jalan Desa Tahap II Selesai</h3>
+                        <p>Pemerintah desa telah menyelesaikan perbaikan infrastruktur jalan sepanjang 2 km untuk meningkatkan akses transportasi warga.</p>
+                        <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="berita-card">
+                    <div class="berita-img">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1769&auto=format&fit=crop" alt="Pelatihan UMKM">
+                    </div>
+                    <div class="berita-content">
+                        <div class="berita-date">
+                            <i class="far fa-calendar-alt"></i> 15 Juni 2025
+                        </div>
+                        <h3>Pelatihan Digital Marketing untuk UMKM Sukses</h3>
+                        <p>Peningkatan keterampilan warga dalam pemasaran online untuk produk-produk lokal Desa Palasah telah berhasil dilaksanakan.</p>
+                        <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
         </section>
 
-       <section id="kontak">
-    <h1>Hubungi Kami</h1>
-    <p>Kami siap melayani Anda. Silakan hubungi kami melalui formulir di bawah ini atau kunjungi kantor desa kami.</p>
+        <section id="kontak" class="scroll-animate">
+            <h1>Hubungi Kami</h1>
+            <p>Kami siap melayani Anda. Silakan hubungi kami melalui formulir di bawah ini atau kunjungi kantor desa kami.</p>
 
-    <div class="form-container">
-        
-        <form action="https://formspree.io/f/xdkdeljy" method="POST">
-            
-            <div class="form-group">
-                <label for="nama">Nama Lengkap</label>
-                <input type="text" id="nama" name="nama" class="form-control" required>
-            </div>
+            <div class="form-container">
+                <form action="https://formspree.io/f/xdkdeljy" method="POST">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap</label>
+                        <input type="text" id="nama" name="nama" class="form-control" required>
+                    </div>
 
-            <div class="form-group">
-                <label for="email">Alamat Email Anda</label>
-                <input type="email" id="email" name="email" class="form-control" required>
-            </div>
+                    <div class="form-group">
+                        <label for="email">Alamat Email Anda</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
 
-            <div class="form-group">
-                <label for="subjek">Subjek</label>
-                <input type="text" id="subjek" name="subjek" class="form-control" required>
-            </div>
+                    <div class="form-group">
+                        <label for="subjek">Subjek</label>
+                        <input type="text" id="subjek" name="subjek" class="form-control" required>
+                    </div>
 
-            <div class="form-group">
-                <label for="pesan">Pesan Anda</label>
-                <textarea id="pesan" name="message" class="form-control" required></textarea>
-            </div>
+                    <div class="form-group">
+                        <label for="pesan">Pesan Anda</label>
+                        <textarea id="pesan" name="message" class="form-control" required></textarea>
+                    </div>
 
-            <button type="submit" class="submit-btn">Kirim Pesan</button>
-        </form>
+                    <button type="submit" class="submit-btn">Kirim Pesan</button>
+                </form>
 
-        <div class="contact-info">
-            <h3>Informasi Kontak</h3>
-            <div class="contact-item">
-                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                <div class="contact-text">
-                    <h4>Alamat Kantor</h4>
-                    <p>Jl. Alun - Alun Jl. Palasah No.01, Palasah, Kec. Palasah, Kabupaten Majalengka, Jawa Barat 45475 </p>
-                </div>
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                <div class="contact-text">
-                    <h4>Telepon</h4>
-                    <p><a href="tel:+62233123456">(0233) 123-456</a></p>
-                </div>
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                <div class="contact-text">
-                    <h4>Email</h4>
-                    <p><a href="mailto:kontak@palasah.desa.id">kontak@palasah.desa.id</a></p>
-                </div>
-            </div>
-            <div class="opening-hours">
-                <h4>Jam Pelayanan</h4>
-                <ul>
-                    <li><span>Senin - Kamis:</span> <span>08:00 - 15:00</span></li>
-                    <li><span>Jumat:</span> <span>08:00 - 11:30</span></li>
-                    <li><span>Sabtu & Minggu:</span> <span>Tutup</span></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-                    <div class="contact-info">
+                <div class="contact-info">
                     <h3>Informasi Kontak</h3>
                     <div class="contact-item">
                         <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
@@ -1172,7 +1188,7 @@ harus bersifat tidak memihak kepada golongan tertentu dalam memberikan pelayanan
             </div>
 
             <div class="map-container">
-                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15849.995398246746!2d108.28319087595393!3d-6.709325866164227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f2127593339f7%3A0x6b6e41b017f8a70!2sPalasah%2C%20Kec.%20Palasah%2C%20Kabupaten%20Majalengka%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1689321543210!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15849.995398246746!2d108.28319087595393!3d-6.709325866164227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f2127593339f7%3A0x6b6e41b017f8a70!2sPalasah%2C%20Kec.%20Palasah%2C%20Kabupaten%20Majalengka%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1689321543210!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
     </main>
@@ -1203,7 +1219,7 @@ harus bersifat tidak memihak kepada golongan tertentu dalam memberikan pelayanan
             <div class="footer-col">
                 <h3>Hubungi Kami</h3>
                 <ul class="footer-links">
-                    <li><p><i class="fas fa-map-marker-alt"></i> Jl. Alun - Alun Jl. Palasah No.01, Palasah, Kec. Palasah, Kabupaten Majalengka, Jawa Barat 45475 </p></li>
+                    <li><p><i class="fas fa-map-marker-alt"></i> Jl. Alun - Alun Jl. Palasah No.01, Palasah, Kec. Palasah, Kabupaten Majalengka, Jawa Barat 45475</p></li>
                     <li><p><i class="fas fa-phone"></i> (0233) 123-456</p></li>
                     <li><p><i class="fas fa-envelope"></i> kontak@palasah.desa.id</p></li>
                 </ul>
@@ -1221,17 +1237,29 @@ harus bersifat tidak memihak kepada golongan tertentu dalam memberikan pelayanan
             const nav = document.querySelector('nav');
             menuToggle.addEventListener('click', () => {
                 nav.classList.toggle('active');
+                menuToggle.innerHTML = nav.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+
+            // Close mobile menu when clicking on a link
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 992) {
+                        nav.classList.remove('active');
+                        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                });
             });
 
             // Active link based on scroll
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('nav ul li a');
-
             window.addEventListener('scroll', () => {
                 let current = '';
+                const sections = document.querySelectorAll('section');
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
-                    if (pageYOffset >= sectionTop - 150) {
+                    const sectionHeight = section.offsetHeight;
+                    if (pageYOffset >= sectionTop - 150 && pageYOffset < sectionTop + sectionHeight - 150) {
                         current = section.getAttribute('id');
                     }
                 });
@@ -1243,6 +1271,62 @@ harus bersifat tidak memihak kepada golongan tertentu dalam memberikan pelayanan
                     }
                 });
             });
+
+            // Scroll animation
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.scroll-animate');
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.classList.add('animated');
+                    }
+                });
+            };
+
+            // Initial check
+            animateOnScroll();
+            
+            // Check on scroll
+            window.addEventListener('scroll', animateOnScroll);
+
+            // Form submission handling
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const submitBtn = form.querySelector('.submit-btn');
+                    const originalText = submitBtn.textContent;
+                    
+                    try {
+                        submitBtn.disabled = true;
+                        submitBtn.textContent = 'Mengirim...';
+                        
+                        const formData = new FormData(form);
+                        const response = await fetch(form.action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+                        
+                        if (response.ok) {
+                            alert('Pesan Anda telah terkirim! Terima kasih.');
+                            form.reset();
+                        } else {
+                            throw new Error('Gagal mengirim pesan');
+                        }
+                    } catch (error) {
+                        alert('Maaf, terjadi kesalahan. Silakan coba lagi nanti.');
+                        console.error('Error:', error);
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                    }
+                });
+            }
         });
     </script>
 </body>
