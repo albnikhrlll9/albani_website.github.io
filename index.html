@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
+        /* === GLOBAL STYLES === */
         :root {
             --primary: #2e7d32;
             --secondary: #4caf50;
@@ -35,11 +36,13 @@
             line-height: 1.7;
         }
         
+        /* === TYPOGRAPHY === */
         h1, h2, h3, h4 {
             font-weight: 600;
             color: var(--dark);
         }
         
+        /* === HEADER === */
         header {
             background: linear-gradient(135deg, var(--dark), var(--primary));
             color: white;
@@ -87,6 +90,7 @@
             margin-top: -5px;
         }
         
+        /* === NAVIGATION === */
         nav ul {
             list-style: none;
             display: flex;
@@ -117,6 +121,7 @@
             cursor: pointer;
         }
         
+        /* === MAIN CONTENT === */
         main {
             max-width: 1200px;
             margin: 2rem auto;
@@ -173,6 +178,7 @@
             color: var(--dark);
         }
         
+        /* === HERO SECTION === */
         .hero {
             position: relative;
             height: 500px;
@@ -230,6 +236,7 @@
             box-shadow: 0 6px 12px rgba(0,0,0,0.3);
         }
         
+        /* === BERITA SECTION === */
         .berita-list {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -321,6 +328,7 @@
             transform: translateX(3px);
         }
         
+        /* === TABLE STYLES === */
         .table-responsive {
             overflow-x: auto;
         }
@@ -355,6 +363,7 @@
             background-color: #e8f5e9;
         }
         
+        /* === GALERI STYLES === */
         .galeri {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -398,6 +407,7 @@
             transform: translateY(0);
         }
         
+        /* === FORM STYLES === */
         .form-container {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
@@ -542,6 +552,7 @@
             background: linear-gradient(to right, var(--dark), var(--primary));
         }
         
+        /* === MAP STYLES === */
         .map-container {
             margin-top: 3rem;
             border-radius: 12px;
@@ -556,6 +567,7 @@
             border: none;
         }
         
+        /* === FOOTER === */
         footer {
             background: linear-gradient(135deg, var(--dark), #1b1b1b);
             color: white;
@@ -604,7 +616,7 @@
             margin-bottom: 0.8rem;
         }
         
-        .footer-links a, .footer-links p {
+        .footer-links a {
             color: rgba(255,255,255,0.8);
             text-decoration: none;
             transition: all 0.3s ease;
@@ -617,9 +629,9 @@
             transform: translateX(5px);
         }
         
-        .footer-links a i, .footer-links p i {
-            margin-right: 0.8rem;
-            font-size: 1rem;
+        .footer-links a i {
+            margin-right: 0.5rem;
+            font-size: 0.8rem;
         }
         
         .social-links {
@@ -656,6 +668,7 @@
             opacity: 0.7;
         }
         
+      /* === RESPONSIVE === */
         @media (max-width: 992px) {
             .form-container { grid-template-columns: 1fr; }
             .hero-content h2 { font-size: 2.5rem; }
@@ -666,30 +679,56 @@
             .menu-toggle { display: block; }
         }
         
+        /* GANTI SELURUH BLOK INI DENGAN YANG BARU */
         @media (max-width: 768px) {
-            .header-container { padding: 0 1.5rem; }
-            nav ul li { width: 100%; text-align: center; }
-            nav ul li a { padding: 0.7rem; border-radius: 5px; }
-            .hero { height: 400px; }
-            .hero-content h2 { font-size: 2.2rem; }
-            .hero-content p { font-size: 1.1rem; }
-            main { padding: 0 1.5rem; }
-            section { padding: 1.5rem; }
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.5rem; }
-            .berita-list { grid-template-columns: 1fr; }
-            .footer-container { grid-template-columns: 1fr; gap: 2rem; }
-        }
-        
-        /* PENYEMPURNAAN ANIMASI: Menggunakan class yang akan ditambahkan oleh JavaScript */
-        section {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        section.is-visible {
-            opacity: 1;
-            transform: translateY(0);
+            .header-container { 
+                padding: 0 1.5rem; 
+            }
+            /* PENYESUAIAN: Ukuran logo-text dikecilkan */
+            .logo-text h1 {
+                font-size: 1.5rem; 
+            }
+            .logo-text p {
+                font-size: 0.75rem;
+            }
+            nav ul li { 
+                width: 100%; 
+                text-align: center; 
+            }
+            nav ul li a { 
+                padding: 0.7rem; 
+                border-radius: 5px; 
+            }
+            .hero { 
+                height: 400px; 
+            }
+            /* PENYESUAIAN: Ukuran teks hero dikecilkan */
+            .hero-content h2 { 
+                font-size: 2.2rem; 
+                line-height: 1.2;
+            }
+            .hero-content p { 
+                font-size: 1.1rem; 
+            }
+            main { 
+                padding: 0 1.5rem; 
+            }
+            section { 
+                padding: 1.5rem; 
+            }
+            h1 { 
+                font-size: 2rem; 
+            }
+            h2 { 
+                font-size: 1.5rem; 
+            }
+            .berita-list { 
+                grid-template-columns: 1fr; 
+            }
+            .footer-container { 
+                grid-template-columns: 1fr; 
+                gap: 2rem; 
+            }
         }
     </style>
 </head>
@@ -697,14 +736,14 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="palasah.png" alt="Logo Desa Palasah" onerror="this.onerror=null;this.src='https://placehold.co/60x60/FFFFFF/1b5e20?text=P';">
+                <img src="palasah.png" alt="Logo Desa Palasah">
                 <div class="logo-text">
                     <h1>Desa Palasah</h1>
                     <p>Kec. Palasah, Kab. Majalengka</p>
                 </div>
             </div>
             <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-            <nav id="main-nav">
+            <nav>
                 <ul>
                     <li><a href="#beranda" class="active">Beranda</a></li>
                     <li><a href="#profil">Profil</a></li>
@@ -732,40 +771,35 @@
 
         <section id="profil">
             <h1>Profil Desa Palasah</h1>
+            
             <h2>Sejarah Desa</h2>
             <p>Desa Palasah didirikan pada awal abad ke-19 sebagai permukiman agraris. Nama "Palasah" berasal dari kata "Palas" yang dalam bahasa Sunda berarti tanaman padi yang subur, menggambarkan kesuburan tanah di wilayah ini. Sejak dulu hingga sekarang, semangat gotong royong menjadi landasan utama dalam setiap sendi kehidupan masyarakat.</p>
+            
             <h2>Kondisi Geografis</h2>
             <div class="table-responsive">
                 <table>
-                    <thead>
-                        <tr>
-                            <th style="width: 30%;">Keterangan</th>
-                            <th>Data</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Ketinggian</td>
-                            <td>50-100 meter di atas permukaan laut</td>
-                        </tr>
-                        <tr>
-                            <td>Luas Wilayah</td>
-                            <td>186,0740 hektar</td>
-                        </tr>
-                        <tr>
-                            <td>Batas Wilayah</td>
-                            <td>
-                                <ul style="padding-left: 20px; margin: 0;">
-                                    <li><strong>Utara:</strong> Desa Cisambeng</li>
-                                    <li><strong>Timur:</strong> Desa Buniwangi</li>
-                                    <li><strong>Selatan:</strong> Desa Sindanghaji</li>
-                                    <li><strong>Barat:</strong> Desa Pasir</li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </tbody>
+                    <tr>
+                        <th>Ketinggian</th>
+                        <td>50-100 meter di atas permukaan laut</td>
+                    </tr>
+                    <tr>
+                        <th>Luas Wilayah</th>
+                        <td> ( 186,0740 hektar)</td>
+                    </tr>
+                    <tr>
+                        <th>Batas Wilayah</th>
+                        <td>
+                            <ul style="padding-left: 20px;">
+                                <li><strong>Utara:</strong> Desa Cisambeng</li>
+                                <li><strong>Timur:</strong> Desa Buniwangi</li>
+                                <li><strong>Selatan:</strong> Desa SindangHaji</li>
+                                <li><strong>Barat:</strong> Desa Pasir</li>
+                            </ul>
+                        </td>
+                    </tr>
                 </table>
             </div>
+            
             <h2>Demografi</h2>
             <div class="table-responsive">
                 <table>
@@ -793,7 +827,8 @@
 
         <section id="pemerintahan">
             <h1>Pemerintahan Desa</h1>
-            <h2>Aparat Desa Palasah</h2>
+            
+            <h2>Struktur  Aparat Desa Palasah</h2>
             <div class="table-responsive">
                 <table>
                     <thead>
@@ -804,22 +839,60 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>Kepala Desa</td><td>Surandi S.Kom.</td><td>0812-2100-0037</td></tr>
-                        <tr><td>Sekretaris Desa</td><td>Idah Paridah</td><td>-</td></tr>
-                        <tr><td>Kaur Keuangan</td><td>Neng Mona N</td><td>-</td></tr>
-                        <tr><td>Kaur Perencanaan</td><td>Fahrul Rachmat Nasrullah, S.T</td><td>-</td></tr>
-                        <tr><td>Kasi Kesejahteraan</td><td>Dendi Darmansyah</td><td>-</td></tr>
-                        <tr><td>Kasi Pemerintahan</td><td>Nono Carsono</td><td>-</td></tr>
-                        <tr><td>Kasi Pelayanan</td><td>Sumarna</td><td>-</td></tr>
-                        <tr><td>Kepala Dusun 1</td><td>Doni Perdiana</td><td>-</td></tr>
-                        <tr><td>Kepala Dusun 2</td><td>Unggul Andiana</td><td>-</td></tr>
+                        <tr>
+                            <td>Kepala Desa</td>
+                            <td>Surandi S.Kom.</td>
+                            <td>0812-2100-0037</td>
+                        </tr>
+                        <tr>
+                            <td>Sekretaris Desa</td>
+                            <td>Idah Paridah</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Kaur Keuangan</td>
+                            <td>Neng Mona N</td>
+                             <td></td>
+                        </tr>
+                        <tr>
+                            <td>Kaur Perancanaan</td>
+                            <td>Fahrul Rachmat Nasrullah, S.T</td>
+                             <td></td>
+                        </tr>
+                        <tr>
+                            <td>Kasi Kesejahteraan </td>
+                            <td>Dendi Darmansyah</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Kasi Pemerintahanan</td>
+                            <td>Nono Carsono</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Kasi Pelayanan </td>
+                            <td>Sumarna </td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Kepala Dusun 1</td>
+                            <td>Doni Perdiana</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Kepala Dusun 2 </td>
+                            <td>Unggul Andiana </td>
+                            <td></td>
                     </tbody>
                 </table>
             </div>
+            
             <h2>Visi & Misi</h2>
             <div style="background: #f5f5f5; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 5px solid var(--primary);">
                 <h3 style="color: var(--primary);">Visi:</h3>
                 <p style="font-style: italic; font-size: 1.1rem;">"Terwujudnya Desa Palasah yang Maju, Mandiri, dan Berbudaya Berlandaskan Gotong Royong"</p>
+                
                 <h3 style="color: var(--primary); margin-top: 1.5rem;">Misi:</h3>
                 <ol style="padding-left: 1.5rem;">
                     <li>Meningkatkan pembangunan infrastruktur desa yang merata dan berkelanjutan.</li>
@@ -833,14 +906,15 @@
 
         <section id="potensi">
             <h1>Potensi Desa</h1>
+            
             <h2>Pertanian</h2>
             <p>Desa Palasah memiliki lahan pertanian yang subur dengan berbagai komoditas unggulan yang menjadi tulang punggung perekonomian warga.</p>
             <div class="table-responsive">
                 <table>
                     <thead>
                         <tr>
-                            <th>Jenis Lahan</th>
-                            <th>Luas</th>
+                            <th>Komoditas</th>
+                            <th>Luas Lahan</th>
                             <th>Produktivitas</th>
                         </tr>
                     </thead>
@@ -856,24 +930,21 @@
                             <td>5 ton/ha</td>
                         </tr>
                         <tr>
-                            <td>Fasilitas Lainnya</td>
-                            <td>10 ha</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>Tanah Khas Desa</td>
-                            <td>13 ha</td>
-                            <td>-</td>
-                        </tr>
+                            <td>Fasilitas Lainya</td>
+                            <td>10 ha</td>                 
+                        </tr>    
+                        <td>Tanah Khas Desa</td>
+                            <td>13 ha</td
                     </tbody>
                 </table>
             </div>
+
             <h2>UMKM & Industri Rumahan</h2>
             <p>Selain pertanian, warga Desa Palasah juga aktif dalam kegiatan ekonomi kreatif melalui UMKM yang menghasilkan produk-produk berkualitas.</p>
             <ul style="padding-left: 20px;">
                 <li><strong>Keripik Singkong:</strong> Produksi keripik dengan aneka rasa yang sudah dipasarkan ke luar daerah.</li>
-                <li><strong>Rengginang:</strong> Makanan ringan tradisional yang renyah dan gurih, dibuat secara turun-temurun.</li>
-                <li><strong>Gula Merah:</strong> Pembuatan gula merah dari nira kelapa secara tradisional.</li>
+                <li><strong>Renginang:</strong> </li>
+                 <li><strong>Gula Merah:</strong> Pembuatan gula merah dari nira kelapa secara tradisional.</li>
                 <li><strong>Kerajinan Bambu:</strong> Pembuatan anyaman bambu seperti boboko, hihid, dan perabotan rumah tangga lainnya.</li>
             </ul>
         </section>
@@ -881,40 +952,168 @@
         <section id="galeri">
             <h1>Galeri Desa</h1>
             <div class="galeri">
-                <div class="galeri-item"><img src="https://images.unsplash.com/photo-1534019279430-9a3d5b1b44ab?q=80&w=870&auto=format&fit=crop" alt="Panen Padi"><div class="galeri-caption">Panen Raya Padi</div></div>
-                <div class="galeri-item"><img src="https://images.unsplash.com/photo-1596701062353-7333514a4d62?q=80&w=870&auto=format&fit=crop" alt="Gotong Royong"><div class="galeri-caption">Kerja Bakti Warga</div></div>
-                <div class="galeri-item"><img src="https://images.unsplash.com/photo-1523580846011-3a66fe7a5286?q=80&w=870&auto=format&fit=crop" alt="Acara Desa"><div class="galeri-caption">Musyawarah Desa</div></div>
-                <div class="galeri-item"><img src="https://images.unsplash.com/photo-1620138547596-a6a337f41c53?q=80&w=870&auto=format&fit=crop" alt="Produk UMKM"><div class="galeri-caption">Produk UMKM Lokal</div></div>
-                <div class="galeri-item"><img src="https://images.unsplash.com/photo-1627916538183-35545a463b78?q=80&w=870&auto=format&fit=crop" alt="Anak-anak Bermain"><div class="galeri-caption">Keceriaan Anak Desa</div></div>
-                <div class="galeri-item"><img src="https://images.unsplash.com/photo-1473187983301-b121af09ab0b?q=80&w=870&auto=format&fit=crop" alt="Pemandangan Senja"><div class="galeri-caption">Senja di Palasah</div></div>
+                <div class="galeri-item">
+                    <img src="padi.jpg" alt="Panen Padi">
+                    <div class="galeri-caption">Panen Raya Padi</div>
+                </div>
+                <div class="galeri-item">
+                    <img src="gotong royong.jpg" alt="Gotong Royong">
+                    <div class="galeri-caption">Kerja Bakti Warga</div>
+                </div>
+                <div class="galeri-item">
+                    <img src="acara desa.jpg" alt="Acara Desa">
+                    <div class="galeri-caption">Musyawarah Desa</div>
+                </div>
+                <div class="galeri-item">
+                    <img src="UMKM.jpg" alt="Produk UMKM">
+                    <div class="galeri-caption">Produk UMKM Lokal</div>
+                </div>
+                 <div class="galeri-item">
+                    <img src="anak anak.jpg" alt="Anak-anak Bermain">
+                    <div class="galeri-caption">Keceriaan Anak Desa</div>
+                </div>
+                 <div class="galeri-item">
+                    <img src="senja.jpg" alt="Pemandangan Senja">
+                    <div class="galeri-caption">Senja di Palasah</div>
+                </div>
             </div>
         </section>
 
         <section id="berita">
              <h1>Berita & Informasi</h1>
              <div class="berita-list">
-                   <article class="berita-card"><div class="berita-img"><img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1770&auto=format&fit=crop" alt="Festival Desa"></div><div class="berita-content"><div class="berita-date"><i class="far fa-calendar-alt"></i> 10 Juli 2025</div><h3>Festival Desa Palasah 2025 Siap Digelar</h3><p>Kegiatan tahunan warga untuk mempromosikan budaya lokal dengan berbagai lomba dan pertunjukan seni akan segera dilaksanakan.</p><a href="#berita" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a></div></article>
-                   <article class="berita-card"><div class="berita-img"><img src="https://images.unsplash.com/photo-1618060932014-4deda4932554?q=80&w=870&auto=format&fit=crop" alt="Pembangunan Jalan"></div><div class="berita-content"><div class="berita-date"><i class="far fa-calendar-alt"></i> 28 Juni 2025</div><h3>Pembangunan Jalan Desa Tahap II Selesai</h3><p>Pemerintah desa telah menyelesaikan perbaikan infrastruktur jalan sepanjang 2 km untuk meningkatkan akses transportasi warga.</p><a href="#berita" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a></div></article>
-                   <article class="berita-card"><div class="berita-img"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1769&auto=format&fit=crop" alt="Pelatihan UMKM"></div><div class="berita-content"><div class="berita-date"><i class="far fa-calendar-alt"></i> 15 Juni 2025</div><h3>Pelatihan Digital Marketing untuk UMKM Sukses</h3><p>Peningkatan keterampilan warga dalam pemasaran online untuk produk-produk lokal telah berhasil dilaksanakan.</p><a href="#berita" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a></div></article>
+                 <article class="berita-card">
+                     <div class="berita-img">
+                         <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1770&auto=format&fit=crop" alt="Festival Desa">
+                     </div>
+                     <div class="berita-content">
+                         <div class="berita-date">
+                             <i class="far fa-calendar-alt"></i> 10 Juli 2025
+                         </div>
+                         <h3>Festival Desa Palasah 2025 Siap Digelar</h3>
+                         <p>Kegiatan tahunan warga Palasah untuk mempromosikan budaya lokal dengan berbagai lomba dan pertunjukan seni akan segera dilaksanakan.</p>
+                         <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                     </div>
+                 </article>
+                 
+                 <article class="berita-card">
+                     <div class="berita-img">
+                         <img src="jalan.jpeg" alt="Pembangunan Jalan">
+                     </div>
+                     <div class="berita-content">
+                         <div class="berita-date">
+                             <i class="far fa-calendar-alt"></i> 28 Juni 2025
+                         </div>
+                         <h3>Pembangunan Jalan Desa Tahap II Selesai</h3>
+                         <p>Pemerintah desa telah menyelesaikan perbaikan infrastruktur jalan sepanjang 2 km untuk meningkatkan akses transportasi warga.</p>
+                         <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                     </div>
+                 </article>
+                 
+                 <article class="berita-card">
+                     <div class="berita-img">
+                         <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1769&auto=format&fit=crop" alt="Pelatihan UMKM">
+                     </div>
+                     <div class="berita-content">
+                         <div class="berita-date">
+                             <i class="far fa-calendar-alt"></i> 15 Juni 2025
+                         </div>
+                         <h3>Pelatihan Digital Marketing untuk UMKM Sukses</h3>
+                         <p>Peningkatan keterampilan warga dalam pemasaran online untuk produk-produk lokal Desa Palasah telah berhasil dilaksanakan.</p>
+                         <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                     </div>
+                 </article>
              </div>
         </section>
 
-        <section id="kontak">
-            <h1>Hubungi Kami</h1>
-            <p>Kami siap melayani Anda. Silakan hubungi kami melalui formulir di bawah ini atau kunjungi kantor desa kami.</p>
-            <div class="form-container">
-                <form action="https://formspree.io/f/xdkdeljy" method="POST">
-                    <div class="form-group"><label for="nama">Nama Lengkap</label><input type="text" id="nama" name="nama" class="form-control" required></div>
-                    <div class="form-group"><label for="email">Alamat Email Anda</label><input type="email" id="email" name="email" class="form-control" required></div>
-                    <div class="form-group"><label for="subjek">Subjek</label><input type="text" id="subjek" name="subjek" class="form-control" required></div>
-                    <div class="form-group"><label for="pesan">Pesan Anda</label><textarea id="pesan" name="message" class="form-control" required></textarea></div>
-                    <button type="submit" class="submit-btn">Kirim Pesan</button>
-                </form>
-                <div class="contact-info">
+       <section id="kontak">
+    <h1>Hubungi Kami</h1>
+    <p>Kami siap melayani Anda. Silakan hubungi kami melalui formulir di bawah ini atau kunjungi kantor desa kami.</p>
+
+    <div class="form-container">
+        
+        <form action="https://formspree.io/f/xdkdeljy" method="POST">
+            
+            <div class="form-group">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Alamat Email Anda</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="subjek">Subjek</label>
+                <input type="text" id="subjek" name="subjek" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pesan">Pesan Anda</label>
+                <textarea id="pesan" name="message" class="form-control" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Kirim Pesan</button>
+        </form>
+
+        <div class="contact-info">
+            <h3>Informasi Kontak</h3>
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="contact-text">
+                    <h4>Alamat Kantor</h4>
+                    <p>Jl. Alun - Alun Jl. Palasah No.01, Palasah, Kec. Palasah, Kabupaten Majalengka, Jawa Barat 45475 </p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                <div class="contact-text">
+                    <h4>Telepon</h4>
+                    <p><a href="tel:+62233123456">(0233) 123-456</a></p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <div class="contact-text">
+                    <h4>Email</h4>
+                    <p><a href="mailto:kontak@palasah.desa.id">kontak@palasah.desa.id</a></p>
+                </div>
+            </div>
+            <div class="opening-hours">
+                <h4>Jam Pelayanan</h4>
+                <ul>
+                    <li><span>Senin - Kamis:</span> <span>08:00 - 15:00</span></li>
+                    <li><span>Jumat:</span> <span>08:00 - 11:30</span></li>
+                    <li><span>Sabtu & Minggu:</span> <span>Tutup</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+                    <div class="contact-info">
                     <h3>Informasi Kontak</h3>
-                    <div class="contact-item"><div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div><div class="contact-text"><h4>Alamat Kantor</h4><p>Jl. Alun-Alun Palasah No. 01, Palasah, Kec. Palasah, Kabupaten Majalengka, Jawa Barat 45475</p></div></div>
-                    <div class="contact-item"><div class="contact-icon"><i class="fas fa-phone"></i></div><div class="contact-text"><h4>Telepon</h4><p><a href="tel:+62233123456">(0233) 123-456</a></p></div></div>
-                    <div class="contact-item"><div class="contact-icon"><i class="fas fa-envelope"></i></div><div class="contact-text"><h4>Email</h4><p><a href="mailto:kontak@palasah.desa.id">kontak@palasah.desa.id</a></p></div></div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-text">
+                            <h4>Alamat Kantor</h4>
+                            <p>Jl. Alun - Alun Jl. Palasah No.01, Palasah, Kec. Palasah, Kabupaten Majalengka, Jawa Barat 45475</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div class="contact-text">
+                            <h4>Telepon</h4>
+                            <p><a href="tel:+62233123456">(0233) 123-456</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p><a href="mailto:kontak@palasah.desa.id">kontak@palasah.desa.id</a></p>
+                        </div>
+                    </div>
                     <div class="opening-hours">
                         <h4>Jam Pelayanan</h4>
                         <ul>
@@ -925,8 +1124,9 @@
                     </div>
                 </div>
             </div>
+
             <div class="map-container">
-                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15850.59728441113!2d108.2868018446973!3d-6.786526181958862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f21223405a415%3A0x6331a982928d361c!2sPalasah%2C%20Kec.%20Palasah%2C%20Kabupaten%20Majalengka%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1678886543210!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15849.995398246746!2d108.28319087595393!3d-6.709325866164227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f2127593339f7%3A0x6b6e41b017f8a70!2sPalasah%2C%20Kec.%20Palasah%2C%20Kabupaten%20Majalengka%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1689321543210!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
     </main>
@@ -937,10 +1137,10 @@
                 <h3>Desa Palasah</h3>
                 <p>Desa yang terus berbenah untuk menjadi lebih maju, mandiri, dan berbudaya dengan semangat gotong royong.</p>
                 <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
             <div class="footer-col">
@@ -957,70 +1157,45 @@
             <div class="footer-col">
                 <h3>Hubungi Kami</h3>
                 <ul class="footer-links">
-                    <li><p><i class="fas fa-map-marker-alt"></i> Jl. Alun-Alun Palasah No. 01, Majalengka</p></li>
-                    <li><a href="tel:+62233123456"><i class="fas fa-phone"></i> (0233) 123-456</a></li>
-                    <li><a href="mailto:kontak@palasah.desa.id"><i class="fas fa-envelope"></i> kontak@palasah.desa.id</a></li>
+                    <li><p><i class="fas fa-map-marker-alt"></i> Jl. Alun - Alun Jl. Palasah No.01, Palasah, Kec. Palasah, Kabupaten Majalengka, Jawa Barat 45475 </p></li>
+                    <li><p><i class="fas fa-phone"></i> (0233) 123-456</p></li>
+                    <li><p><i class="fas fa-envelope"></i> kontak@palasah.desa.id</p></li>
                 </ul>
             </div>
         </div>
         <div class="copyright">
-            © 2025 Pemerintah Desa Palasah, Majalengka. All Rights Reserved.
+            &copy; 2025 Pemerintah Desa Palasah, Majalengka. All Rights Reserved.
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle
             const menuToggle = document.querySelector('.menu-toggle');
-            const nav = document.querySelector('#main-nav');
-            const navLinks = document.querySelectorAll('#main-nav ul li a');
-
+            const nav = document.querySelector('nav');
             menuToggle.addEventListener('click', () => {
                 nav.classList.toggle('active');
             });
 
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (nav.classList.contains('active')) {
-                        nav.classList.remove('active');
+            // Active link based on scroll
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav ul li a');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 150) {
+                        current = section.getAttribute('id');
                     }
                 });
-            });
-            
-            const allSections = document.querySelectorAll('main section');
-            const animationObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
+
+                navLinks.forEach(a => {
+                    a.classList.remove('active');
+                    if (a.getAttribute('href') === '#' + current) {
+                        a.classList.add('active');
                     }
                 });
-            }, { threshold: 0.1 });
-
-            allSections.forEach(section => {
-                animationObserver.observe(section);
-            });
-
-            const navObserverOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.5 
-            };
-
-            const navObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const id = entry.target.getAttribute('id');
-                        const currentLink = document.querySelector(`nav ul li a[href="#${id}"]`);
-                        
-                        navLinks.forEach(link => link.classList.remove('active'));
-                        if(currentLink) {
-                           currentLink.classList.add('active');
-                        }
-                    }
-                });
-            }, navObserverOptions);
-
-            allSections.forEach(section => {
-                navObserver.observe(section);
             });
         });
     </script>
