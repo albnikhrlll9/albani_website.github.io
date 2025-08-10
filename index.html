@@ -596,14 +596,13 @@
             background: linear-gradient(to right, var(--dark), var(--primary));
         }
         
-        /* === MAP & FOOTER (PERBAIKAN DI SINI) === */
+        /* === MAP & FOOTER === */
         .map-container {
             margin-top: 3rem;
             border-radius: var(--border-radius-lg);
             overflow: hidden;
             box-shadow: var(--shadow-md);
             border: 1px solid var(--border-color);
-            /* Menghapus tinggi tetap dan menggunakan aspect-ratio */
             aspect-ratio: 16 / 9;
         }
 
@@ -757,7 +756,6 @@
             .hero-content p { font-size: 1.1rem; }
             .berita-list { grid-template-columns: 1fr; }
             
-            /* Menyesuaikan rasio peta untuk mobile */
             .map-container {
                 aspect-ratio: 4 / 3;
             }
@@ -818,37 +816,45 @@
             </div>
         </section>
 
-        <!-- The rest of your HTML content remains exactly the same -->
         <section id="profil" class="scroll-animate">
             <h1>Profil Desa Palasah</h1>
             <h2>Sejarah Desa</h2>
             <p>Desa Palasah didirikan pada awal abad ke-19 sebagai permukiman agraris. Nama "Palasah" berasal dari kata "Palas" yang dalam bahasa Sunda berarti tanaman padi yang subur, menggambarkan kesuburan tanah di wilayah ini. Sejak dulu hingga sekarang, semangat gotong royong menjadi landasan utama dalam setiap sendi kehidupan masyarakat.</p>
+            
+            
             <h2>Kondisi Geografis</h2>
             <div class="table-responsive">
                 <table>
                     <tbody>
                         <tr>
                             <td><strong>Ketinggian</strong></td>
-                            <td>50-100 meter di atas permukaan laut</td>
+                            <td>: 50-100 meter di atas permukaan laut</td>
                         </tr>
                         <tr>
                             <td><strong>Luas Wilayah</strong></td>
-                            <td>186,0740 hektar</td>
+                            <td>: 186,0740 hektar</td>
                         </tr>
                         <tr>
-                            <td><strong>Batas Wilayah</strong></td>
-                            <td>
-                                <ul>
-                                    <li><strong>Utara:</strong> Desa Cisambeng</li>
-                                    <li><strong>Timur:</strong> Desa Buniwangi</li>
-                                    <li><strong>Selatan:</strong> Desa SindangHaji</li>
-                                    <li><strong>Barat:</strong> Desa Pasir</li>
-                                </ul>
-                            </td>
+                            <td><strong>Batas Sebelah Utara</strong></td>
+                            <td>: Desa Cisambeng</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Batas Sebelah Timur</strong></td>
+                            <td>: Desa Buniwangi</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Batas Sebelah Selatan</strong></td>
+                            <td>: Desa SindangHaji</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Batas Sebelah Barat</strong></td>
+                            <td>: Desa Pasir</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+            <!-- === AKHIR PERBAIKAN === -->
+
             <h2>Demografi</h2>
             <div class="table-responsive">
                 <table>
@@ -947,6 +953,7 @@ harus bersifat tidak memihak kepada golongan tertentu dalam memberikan pelayanan
             <h2>UMKM & Industri Rumahan</h2>
             <p>Selain pertanian, warga Desa Palasah juga aktif dalam kegiatan ekonomi kreatif melalui UMKM yang menghasilkan produk-produk berkualitas.</p>
             <ul>
+                <li><strong>Opak Ketan:</strong> Makanan ringan Khas Sunda, Sejenis kerupuk yang terbuat dari bahan utama beras ketan atau singkong.</li>
                 <li><strong>Keripik Singkong:</strong> Produksi keripik dengan aneka rasa yang sudah dipasarkan ke luar daerah.</li>
                 <li><strong>Renginang:</strong> Makanan ringan tradisional yang menjadi oleh-oleh khas desa.</li>
                 <li><strong>Gula Merah:</strong> Pembuatan gula merah dari nira kelapa secara tradisional.</li>
@@ -957,12 +964,17 @@ harus bersifat tidak memihak kepada golongan tertentu dalam memberikan pelayanan
         <section id="galeri" class="scroll-animate">
             <h1>Galeri Desa</h1>
             <div class="galeri">
-                <div class="galeri-item"><img src="padi.jpg" alt="Panen Padi"><div class="galeri-caption">Panen Raya Padi</div></div>
-                <div class="galeri-item"><img src="gotong royong.jpg" alt="Gotong Royong"><div class="galeri-caption">Kerja Bakti Warga</div></div>
+                <div class="galeri-item"><img src="Panen.jpg" alt="Panen Padi"><div class="galeri-caption">Panen Padi</div></div>
+                <div class="galeri-item"><img src="nanam.jpg" alt="Tanam bibit"><div class="galeri-caption">Menanam Bibit</div></div>
                 <div class="galeri-item"><img src="acara desa.png" alt="Acara Desa"><div class="galeri-caption">Musyawarah Desa (GEBER)</div></div>
-                <div class="galeri-item"><img src="UMKM.jpg" alt="Produk UMKM"><div class="galeri-caption">Produk UMKM Lokal</div></div>
-                <div class="galeri-item"><img src="anak anak.jpg" alt="Anak-anak Bermain"><div class="galeri-caption">Keceriaan Anak Desa</div></div>
-                <div class="galeri-item"><img src="senja.jpg" alt="Pemandangan Senja"><div class="galeri-caption">Senja di Palasah</div></div>
+                <div class="galeri-item"><img src="Umkm.jpg" alt="Produk UMKM"><div class="galeri-caption">Penjual UMKM Lokal</div></div>
+                <div class="galeri-item"><img src="foto bersama.jpg" alt="Anak-anak Bermain"><div class="galeri-caption">Keceriaan Anak Desa</div></div>
+                <div class="galeri-item"><img src="pertemuan.jpg" alt="Seminar Zero Stunting"><div class="galeri-caption">Pertemuan Ibu Hamil</div></div>
+                <div class="galeri-item"><img src="tanam.jpg" alt="Penanaman Bibit P2L"><div class="galeri-caption">Menanam Bibit</div></div>
+                <div class="galeri-item"><img src="umkm2.jpg" alt="Produk UMKM"><div class="galeri-caption">Penjual Umkm Lokal</div></div>
+                <div class="galeri-item"><img src="Musyawarah.jpg" alt="Musyawarah"><div class="galeri-caption">Pematangan Project KKN </div></div>
+                
+
             </div>
         </section>
 
@@ -993,6 +1005,16 @@ harus bersifat tidak memihak kepada golongan tertentu dalam memberikan pelayanan
                         <div class="berita-date"><i class="far fa-calendar-alt"></i> 15 Juni 2025</div>
                         <h3>Pelatihan Digital Marketing untuk UMKM Sukses</h3>
                         <p>Peningkatan keterampilan warga dalam pemasaran online untuk produk-produk lokal Desa Palasah telah berhasil dilaksanakan.</p>
+                        <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                </article>
+                 <article class="berita-card">
+                    <div class="berita-img"><img src="seminar hukum.jpg" alt="Seminar Hukum"></div>
+                    <div class="berita-content">
+                        <div class="berita-date"><i class="far fa-calendar-alt"></i> 6 Agustus 2025</div>
+                        <h3>Seminar Hukum di Smkn 1 Palasah </h3>
+                        <p>Kegiatan ini bertujuan untuk mencegah terjadinya Bullyng dengan tema Membangun Sekolah Aman : Peran Hukum Untuk Mencegah Perundungan .</p>
                         <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
@@ -1056,8 +1078,7 @@ harus bersifat tidak memihak kepada golongan tertentu dalam memberikan pelayanan
                 <h3>Desa Palasah</h3>
                 <p>Desa yang terus berbenah untuk menjadi lebih maju, mandiri, dan berbudaya dengan semangat gotong royong.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/infodesapalasah/?igsh=cWI4a2pnYTVuMTN0#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="footer-col">
@@ -1196,7 +1217,3 @@ harus bersifat tidak memihak kepada golongan tertentu dalam memberikan pelayanan
     </script>
 </body>
 </html>
-
-
-
-
